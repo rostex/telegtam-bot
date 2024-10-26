@@ -15,6 +15,8 @@ import java.util.*;
 
 public class TelegramBot extends TelegramLongPollingBot {
 
+    private final static BotSettings botSettings = BotSettings.getInstance();
+
     private static final String ADD_EXPENSE_BTN = "Добавить трату";
     private static final String SHOW_CATEGORIES_BTN = "Показать категорию";
     private static final String SHOW_EXPENSES_BTN = "Показать все траты";
@@ -27,11 +29,11 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "railway_switch_calculate_bot";
+        return botSettings.getUserName();
     }
 
     public String getBotToken() {
-        return "7323902783:AAH_9dCpstDnLg51NL3BH6m9OHDk8lfql_o";
+        return botSettings.getToken();
     }
 
     @Override
